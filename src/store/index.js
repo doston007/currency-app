@@ -69,7 +69,7 @@ export default new Vuex.Store({
     getLastNDaysHistory({ commit }, days) {
       // Last 10 days
       const dates = [];
-      for (let i = 0; i < days; i++) {
+      for (let i = 1; i <= days; i++) {
         dates.push(dayjs().subtract(i, "day").format("YYYY-MM-DD"));
       }
       return Promise.all(

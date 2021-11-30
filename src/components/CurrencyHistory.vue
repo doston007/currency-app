@@ -82,12 +82,14 @@ export default {
         const data = his.value;
         const from = data?.rates?.[this.from] || 0;
         const to = data?.rates?.[this.to] || 0;
-        const result = (to / from) * this.sum;
+        const devided = to / from;
+        const result = devided * this.sum;
         return {
           date: his.date,
           value: isNaN(result)
             ? "..."
             : result.toLocaleString({ style: "currency" }),
+          devided: isNaN(devided) ? 0 : devided,
         };
       });
     },

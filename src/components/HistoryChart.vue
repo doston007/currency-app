@@ -39,7 +39,7 @@ export default {
           datasets: [
             {
               label: this.label,
-              data: this.data.map((i) => i.value),
+              data: this.data.map((i) => i.devided),
             },
           ],
         },
